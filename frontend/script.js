@@ -11,7 +11,7 @@ async function signin() {
     console.log("Sending request to backend...");
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/login", {
+        const res = await fetch("https://ai-test-generator-5ffb.onrender.com/api/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })
@@ -81,7 +81,7 @@ async function signup() {
     }
 
     try {
-        const res = await fetch("http://localhost:5000/api/auth/register", {
+        const res = await fetch("https://ai-test-generator-5ffb.onrender.com/api/auth/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, password })
@@ -182,7 +182,7 @@ function logout() {
 // Email verification functions
 async function resendVerificationEmail(email) {
     try {
-        const res = await fetch("http://localhost:5000/api/auth/resend-verification", {
+        const res = await fetch("https://ai-test-generator-5ffb.onrender.com/api/auth/resend-verification", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email })
@@ -220,7 +220,7 @@ function checkEmailVerification() {
 
 async function verifyEmail(token) {
     try {
-        const res = await fetch(`http://localhost:5000/api/auth/verify-email?token=${token}`, {
+        const res = await fetch(`https://ai-test-generator-5ffb.onrender.com/api/auth/verify-email?token=${token}`, {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         });
@@ -287,7 +287,7 @@ async function generateTest() {
     };
 
     try {
-        const response = await fetch("http://localhost:5000/api/tests/generate", {
+        const response = await fetch("https://ai-test-generator-5ffb.onrender.com/api/tests/generate", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
