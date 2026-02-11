@@ -1,3 +1,9 @@
+require("dotenv").config();
+const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("MongoDB Connected"))
+.catch(err => console.log("MongoDB connection error:", err));
+
 // Authentication Functions
 async function signin() {
     let email = document.getElementById("signinEmail").value.trim();
@@ -491,4 +497,5 @@ document.addEventListener('click', (e) => {
         closeAuthModal();
     }
 });
+
 
